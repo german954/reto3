@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="js/funciones.js"></script>
+
+
+    <title>RETO</title>
+</head> 
+<body>
+    <em>
+    <h1>Skateboard </h1>
+    </em>
+    <div>
+        <h1>Category</em></h1>
+
+        <input type="text" id="nameCategory" placeholder="Name Category">
+        <input type="text" id="descripcionCategory" placeholder="Descripcion Category">
+        <br>
+        <br>
+        <button onclick="traerInformacionCategory()">Consultar</button>
+        <button onclick="guardarInformacionCategory()">Guardar</button>
+       
+    </div> 
+    <br>
+    <div id="resultadoCategory"></div>
+    
+    <div>
+        <h1>Skate</h1>
+        
+        <input type="text" id="nameSkate" placeholder="Name Skate">
+        <input type="text" id="descripcionSkate" placeholder="Descripcion Skate">
+        <input type="text" id="brandSkate" placeholder="Brand Skate">
+        <input type="number" id="year_bSkate" placeholder="Year_b Skate">
+        <br>  
+        <br>
+        <button onclick="traerInformacionSkate()">Consultar</button>
+        <button onclick="guardarInformacionSkate()">Guardar</button>
+       
+    </div>
+    <br>
+    <div id="resultadoSkate"></div>
+
+    <div>
+        <h1>Client</h1>
+        
+        <input type="text" id="emailClient" placeholder="Email Client">
+        <input type="text" id="passwordClient" placeholder="Password Client">
+        <input type="text" id="nameClient" placeholder="Name Client">
+        <input type="number" id="ageClient" placeholder="Age Client">
+        <br>  
+        <br>
+        <button onclick="traerInformacionClient()">Consultar</button>
+        <button onclick="guardarInformacionClient()">Guardar</button>
+       
+    </div>
+    <br>
+    <div id="resultadoClient"></div>
+
+    <div>
+        <h1>Message</h1>
+        
+        <input type="text" id="messageText" placeholder="MessageText">
+        <br>  
+        <br>
+        <button onclick="traerInformacionMessage()">Consultar</button>
+        <button onclick="guardarInformacionMessage()">Guardar</button>
+       
+    </div>
+    <br>
+    <div id="resultadoMessage"></div>
+
+    <div>
+        <h1>Reservation</h1>
+        
+        <input type="date" id="startDate" placeholder="StartDate">
+        <input type="date" id="devolutionDate" placeholder="DevolutionData">
+        <br>  
+        <br>
+        <button onclick="traerInformacionReservation()">Consultar</button>
+        <button onclick="guardarInformacionReservation()">Guardar</button>
+       
+    </div>
+    <br>
+    <div id="resultadoReservation"></div>
+
+</body>   
+</html>
