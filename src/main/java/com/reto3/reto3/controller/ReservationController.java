@@ -58,5 +58,4 @@ public class ReservationController {
     public List<CounterClient> getClient() {
         return reservationService.reportClient();
     }
-
 }
