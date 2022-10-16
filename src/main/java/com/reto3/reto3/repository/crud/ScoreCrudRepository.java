@@ -4,6 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.reto3.reto3.model.Score;
 
-public interface ScoreCrudRepository extends CrudRepository<Score, Integer>{
-    
+public interface ScoreCrudRepository extends CrudRepository<Score, Integer> {
 }

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ScoreService {
-  
+
     @Autowired
     private ScoreRepository scoreRepository;
 
-    public List<Score> getScoreAll() {
+    /*public List<Score> getScoreAll() {
         return scoreRepository.getScoreAll();
     }
 
@@ -24,22 +24,21 @@ public class ScoreService {
 
     public Score save(Score score) {
 
-            if (score.getIdScore() == null) {
+        if (score.getIdScore() == null) {
+            return scoreRepository.save(score);
+        } else {
+            Optional<Score> e = scoreRepository.getScoreId(score.getIdScore());
+            if (e.isEmpty()) {
                 return scoreRepository.save(score);
             } else {
-                Optional<Score> e = scoreRepository.getScoreId(score.getIdScore());
-                if (e.isEmpty()) {
-                    return scoreRepository.save(score);
-                }
-                else  {
-                       return score; 
-                } 
-            
+                return score;
             }
-        
+
         }
-}
-/* 
+
+    }
+
+
         public Score update (Score score){
             if (score.getIdScore() != null) {
                 Optional<Score> e = scoreRepository.getScoreId(score.getIdScore());
@@ -69,4 +68,4 @@ public class ScoreService {
         }
     }
 */
-
+}

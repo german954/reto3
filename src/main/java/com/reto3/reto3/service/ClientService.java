@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ClientService {
-    
+
     @Autowired
     private ClientRepository clientRepository;
 
-    public List<Client> getClientAll(){
+    public List<Client> getClientAll() {
         return clientRepository.getClientAll();
     }
 
@@ -22,51 +22,50 @@ public class ClientService {
         return clientRepository.getClientId(clientId);
     }
 
-    public Client save(Client client){
-        if(client.getIdClient()==null){
+    public Client save(Client client) {
+        if (client.getIdClient() == null) {
             return clientRepository.save(client);
-        }else{
-            Optional<Client> clientAuxiliar= clientRepository.getClientId(client.getIdClient());
-            if(clientAuxiliar.isEmpty()){
+        } else {
+            Optional<Client> clientAuxiliar = clientRepository.getClientId(client.getIdClient());
+            if (clientAuxiliar.isEmpty()) {
                 return clientRepository.save(client);
-            }else{
+            } else {
                 return client;
             }
         }
     }
 
-    public Client update(Client client){
-        if(client.getIdClient()!=null){
-            Optional<Client> clientAuxiliar= clientRepository.getClientId(client.getIdClient());
-            if(!clientAuxiliar.isEmpty()){
-                if(client.getName()!=null){
+    public Client update(Client client) {
+        if (client.getIdClient() != null) {
+            Optional<Client> clientAuxiliar = clientRepository.getClientId(client.getIdClient());
+            if (!clientAuxiliar.isEmpty()) {
+                if (client.getName() != null) {
                     clientAuxiliar.get().setName(client.getName());
                 }
-                if(client.getAge()!=null){
+                if (client.getAge() != null) {
                     clientAuxiliar.get().setAge(client.getAge());
                 }
-                if(client.getPassword()!=null){
+                if (client.getPassword() != null) {
                     clientAuxiliar.get().setPassword(client.getPassword());
                 }
                 clientRepository.save(clientAuxiliar.get());
                 return clientAuxiliar.get();
-            }else{
+            } else {
                 return client;
             }
-        }else{
+        } else {
             return client;
         }
     }
 
-    public boolean delete(Integer id){
-        boolean flag=false;
+    public boolean delete(Integer id) {
+        boolean flag = false;
         Optional<Client> clientAuxiliar = clientRepository.getClientId(id);
-        if(clientAuxiliar.isPresent()){
+        if (clientAuxiliar.isPresent()) {
             clientRepository.delete(clientAuxiliar.get());
-            flag=true;
+            flag = true;
         }
         return flag;
     }
-
-    }
+}
 

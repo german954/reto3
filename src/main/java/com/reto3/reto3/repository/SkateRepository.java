@@ -11,20 +11,23 @@ import com.reto3.reto3.repository.crud.SkateCrudRepository;
 
 @Repository
 public class SkateRepository {
-    
-@Autowired
+
+    @Autowired
     private SkateCrudRepository skateCrudRepository;
 
-    public List <Skate> getSkateAll(){
-        return (List <Skate>) skateCrudRepository.findAll();
-}
-    public Optional<Skate> getSkateId(Integer id){
-    return skateCrudRepository.findById(id);
-}
-    public Skate save(Skate skate){
-    return skateCrudRepository.save(skate);
-}
-    public void delete(Skate skate){
-    skateCrudRepository.delete(skate);
-}
+    public List<Skate> getSkateAll() {
+        return (List<Skate>) skateCrudRepository.findAll();
+    }
+
+    public Optional<Skate> getSkateId(Integer id) {
+        return skateCrudRepository.findById(id);
+    }
+
+    public Skate save(Skate skate) {
+        return skateCrudRepository.save(skate);
+    }
+
+    public void delete(Skate skate) {
+        skateCrudRepository.delete(skate);
+    }
 }

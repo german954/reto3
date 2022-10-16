@@ -16,26 +16,27 @@ import com.reto3.reto3.repository.crud.CategoryCrudRepository;
 @RequestMapping("/api/Category")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class CategoryRepository {
-   
+
     @Autowired
     private CategoryCrudRepository categoryCrudRepository;
 
-    public List <Category> getCategoryAll(){
-        return (List <Category>) categoryCrudRepository.findAll();
-}
-    public Optional<Category> getCategoryId(Integer id){
-    return categoryCrudRepository.findById(id);
-}
-    public Category save(Category category){
-    return categoryCrudRepository.save(category);
-}
+    public List<Category> getCategoryAll() {
+        return (List<Category>) categoryCrudRepository.findAll();
+    }
 
-public Optional<Category> update(Integer id){
-    return categoryCrudRepository.findById(id);
-}
-    public void delete(Category category){
-    categoryCrudRepository.delete(category);
-}
+    public Optional<Category> getCategoryId(Integer id) {
+        return categoryCrudRepository.findById(id);
+    }
 
+    public Category save(Category category) {
+        return categoryCrudRepository.save(category);
+    }
 
+    /*public Optional<Category> update(Integer id) {
+        return categoryCrudRepository.findById(id);
+    }*/
+
+    public void delete(Category category) {
+        categoryCrudRepository.delete(category);
+    }
 }

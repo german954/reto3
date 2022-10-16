@@ -25,34 +25,35 @@ import com.reto3.reto3.service.CategoryService;
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 
 public class CategoryController {
-    
+
     @Autowired
     private CategoryService categoryService;
 
     @GetMapping("/all")
-    public List<Category> getCategoryAll(){
+    public List<Category> getCategoryAll() {
         return categoryService.getCategoryAll();
-       }
-       @GetMapping("/id")
-    public Optional <Category> getCategoryId (@PathVariable("id")Integer identificador){
-    return categoryService.getCategoryId(identificador);
-   }
-        @PostMapping("/save")
-        @ResponseStatus(HttpStatus.CREATED)
-        public Category save(@RequestBody Category category){
+    }
+
+    @GetMapping("/id")
+    public Optional<Category> getCategoryId(@PathVariable("id") Integer identificador) {
+        return categoryService.getCategoryId(identificador);
+    }
+
+    @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category save(@RequestBody Category category) {
         return categoryService.save(category);
-   }
+    }
 
-   @PutMapping("/update")
-   @ResponseStatus(HttpStatus.CREATED)
-   public Category update(@RequestBody Category category) {
-       return categoryService.update(category);
-   }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category update(@RequestBody Category category) {
+        return categoryService.update(category);
+    }
 
-   @DeleteMapping("/{id}")
-   @ResponseStatus(HttpStatus.NO_CONTENT)
-   public boolean delete(@PathVariable("id") Integer categoryId) {
-       return categoryService.deleteCategory(categoryId);
-   }
-
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") Integer categoryId) {
+        return categoryService.deleteCategory(categoryId);
+    }
 }

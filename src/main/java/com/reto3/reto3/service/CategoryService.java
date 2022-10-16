@@ -13,38 +13,37 @@ public class CategoryService {
 
     @Autowired
     private CategoryRepository categoryRepository;
-   
-   public List<Category> getCategoryAll(){
+
+    public List<Category> getCategoryAll() {
         return categoryRepository.getCategoryAll();
-   }
-   public Optional<Category> getCategoryId(Integer id){
+    }
+
+    public Optional<Category> getCategoryId(Integer id) {
         return categoryRepository.getCategoryId(id);
-   }
-
-   public Category save(Category category){
-    if (category.getId()==null){
-        return categoryRepository.save(category);
     }
-    else{
-        Optional <Category> categoryAuxiliar=categoryRepository.getCategoryId(category.getId());
-        if (categoryAuxiliar.isEmpty()){
+
+    public Category save(Category category) {
+        if (category.getId() == null) {
             return categoryRepository.save(category);
-        }
-        else{
-            return category;
+        } else {
+            Optional<Category> categoryAuxiliar = categoryRepository.getCategoryId(category.getId());
+            if (categoryAuxiliar.isEmpty()) {
+                return categoryRepository.save(category);
+            } else {
+                return category;
+            }
         }
     }
-}
 
-public Category update(Category category){
-    if(category.getId()!=null){
-        Optional<Category>categoryAuxiliar = categoryRepository.getCategoryId(category.getId());
-        if(!categoryAuxiliar.isEmpty()){
-            if(category.getDescription()!=null){
-                categoryAuxiliar.get().setDescription(category.getDescription());
-            }
-            if(category.getName()!=null){
-                categoryAuxiliar.get().setName(category.getName());
+    public Category update(Category category) {
+        if (category.getId() != null) {
+            Optional<Category> categoryAuxiliar = categoryRepository.getCategoryId(category.getId());
+            if (!categoryAuxiliar.isEmpty()) {
+                if (category.getDescription() != null) {
+                    categoryAuxiliar.get().setDescription(category.getDescription());
+                }
+                if (category.getName() != null) {
+                    categoryAuxiliar.get().setName(category.getName());
                 }
                 return categoryRepository.save(categoryAuxiliar.get());
             }
@@ -52,16 +51,15 @@ public Category update(Category category){
         return category;
     }
 
-public boolean deleteCategory (Integer categoryId){
-    boolean flag=false;
-    Optional<Category> categoryAuxiliar= categoryRepository.getCategoryId(categoryId);
-    if (categoryAuxiliar.isPresent()){
-        categoryRepository.delete(categoryAuxiliar.get());
-    flag = true;
-}
-    
-    return flag;
-} 
+    public boolean deleteCategory(Integer categoryId) {
+        boolean flag = false;
+        Optional<Category> categoryAuxiliar = categoryRepository.getCategoryId(categoryId);
+        if (categoryAuxiliar.isPresent()) {
+            categoryRepository.delete(categoryAuxiliar.get());
+            flag = true;
+        }
+        return flag;
+    }
 }
 
 

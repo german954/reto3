@@ -2,6 +2,7 @@ package com.reto3.reto3.controller;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,11 +24,12 @@ import com.reto3.reto3.service.ScoreService;
 @RequestMapping("/api/Score")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ScoreController {
-    
+
     @Autowired
     private ScoreService scoreService;
-    @GetMapping("/all")
-    public List<Score> getScoreAll(){
+
+    /*@GetMapping("/all")
+    public List<Score> getScoreAll() {
         return scoreService.getScoreAll();
     }
 

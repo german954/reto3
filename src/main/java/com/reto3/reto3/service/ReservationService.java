@@ -10,8 +10,8 @@ import java.util.Optional;
 
 import com.reto3.reto3.model.Client;
 import com.reto3.reto3.model.Reservation;
-import com.reto3.reto3.reports.CounterClient;
-import com.reto3.reto3.reports.StatusReservation;
+//import com.reto3.reto3.reports.CounterClient;
+//import com.reto3.reto3.reports.StatusReservation;
 import com.reto3.reto3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,7 +43,7 @@ public class ReservationService {
         }
     }
 
-    public StatusReservation ReservationStatus() {
+    /*public StatusReservation ReservationStatus() {
 
         List<Reservation> completed = reservationRepository.ReservationStatus("completed");
         List<Reservation> cancelled = reservationRepository.ReservationStatus("cancelled");
@@ -79,6 +79,5 @@ public class ReservationService {
             result.add(new CounterClient((Long) report.get(i)[1], (Client) report.get(i)[0]));
         }
         return result;
-    }
-
+    }*/
 }

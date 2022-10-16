@@ -25,11 +25,12 @@ import com.reto3.reto3.service.AdminService;
 @RequestMapping("/api/Admin")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class AdminController {
-    
+
     @Autowired
     private AdminService adminService;
-    @GetMapping("/all")
-    public List<Admin> getAdminAll(){
+
+    /*@GetMapping("/all")
+    public List<Admin> getAdminAll() {
         return adminService.getAdminAll();
     }
 
@@ -43,7 +44,7 @@ public class AdminController {
     public Admin save(@RequestBody Admin admin) {
         return adminService.save(admin);
     }
-    /*  @PutMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Admin update(@RequestBody Admin admin) {
         return adminService.update(admin);

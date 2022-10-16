@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageService {
-    
+
     @Autowired
     private MessageRepository messageRepository;
 
-    public List<Message> getMessageAll(){
+    public List<Message> getMessageAll() {
         return messageRepository.getMessageAll();
     }
 
@@ -22,45 +22,44 @@ public class MessageService {
         return messageRepository.getMessageId(messageId);
     }
 
-    public Message save(Message message){
-        if(message.getIdMessage()==null){
+    public Message save(Message message) {
+        if (message.getIdMessage() == null) {
             return messageRepository.save(message);
-        }else{
-            Optional<Message> messageAuxiliar= messageRepository.getMessageId(message.getIdMessage());
-            if(messageAuxiliar.isEmpty()){
+        } else {
+            Optional<Message> messageAuxiliar = messageRepository.getMessageId(message.getIdMessage());
+            if (messageAuxiliar.isEmpty()) {
                 return messageRepository.save(message);
-            }else{
+            } else {
                 return message;
             }
         }
     }
 
-    public Message update(Message message){
-        if(message.getIdMessage()!=null){
-            Optional<Message> messageAuxiliar= messageRepository.getMessageId(message.getIdMessage());
-            if(!messageAuxiliar.isEmpty()){
-                if(message.getMessageText()!=null){
+    /*public Message update(Message message) {
+        if (message.getIdMessage() != null) {
+            Optional<Message> messageAuxiliar = messageRepository.getMessageId(message.getIdMessage());
+            if (!messageAuxiliar.isEmpty()) {
+                if (message.getMessageText() != null) {
                     messageAuxiliar.get().setMessageText(message.getMessageText());
                 }
                 messageRepository.save(messageAuxiliar.get());
                 return messageAuxiliar.get();
-            }else{
+            } else {
                 return message;
             }
-        }else{
+        } else {
             return message;
         }
     }
 
-    public boolean delete(Integer messageId){
-        boolean flag=false;
+    public boolean delete(Integer messageId) {
+        boolean flag = false;
         Optional<Message> messageAuxiliar = messageRepository.getMessageId(messageId);
-        if(messageAuxiliar.isPresent()){
+        if (messageAuxiliar.isPresent()) {
             messageRepository.delete(messageAuxiliar.get());
-            flag=true;
+            flag = true;
         }
         return flag;
-    }
-
+    }*/
 }
 

@@ -1,7 +1,7 @@
-package com.reto3.reto3.reports;
+/*package com.reto3.reto3.reports;
 
 public class StatusReservation {
-    
+
     private Integer completed;
     private Integer cancelled;
 
@@ -25,7 +25,5 @@ public class StatusReservation {
     public void setCancelled(Integer cancelled) {
         this.cancelled = cancelled;
     }
-
-    
-}
+}*/
 

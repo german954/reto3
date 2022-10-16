@@ -1,4 +1,4 @@
-package com.reto3.reto3.reports;
+/*package com.reto3.reto3.reports;
 
 import com.reto3.reto3.model.Client;
 
@@ -26,6 +26,4 @@ public class CounterClient {
     public void setClient(Client client) {
         this.client = client;
     }
-
-    
-}
+}*/

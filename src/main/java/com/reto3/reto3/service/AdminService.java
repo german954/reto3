@@ -9,13 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-
 public class AdminService {
-    
+
     @Autowired
     private AdminRepository adminRepository;
 
-    public List<Admin> getAdminAll() {
+    /*public List<Admin> getAdminAll() {
         return adminRepository.getAdminAll();
     }
 
@@ -35,7 +34,7 @@ public class AdminService {
             }
         }
     }
-/* 
+
     public Admin update(Admin admin){
         if(admin.getIdAdmin()!=null){
             Optional<Admin>adminAuxiliar = adminRepository.getAdminId(admin.getIdAdmin());
@@ -61,4 +60,4 @@ public class AdminService {
         return flag;
     } 
     */
-    }
+}

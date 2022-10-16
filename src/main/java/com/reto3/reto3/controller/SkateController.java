@@ -22,26 +22,28 @@ import com.reto3.reto3.model.Skate;
 
 @RestController
 @RequestMapping("/api/Skate")
-@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class SkateController {
-    
+
     @Autowired
     private SkateService skateService;
+
     @GetMapping("/all")
-    public List<Skate> getSkateAll(){
-    return skateService.getSkateAll();
-}
+    public List<Skate> getSkateAll() {
+        return skateService.getSkateAll();
+    }
 
     @GetMapping("/{id}")
-    public Optional<Skate> getSkateId(@PathVariable("id")Integer identificador){
-    return skateService.getSkateId(identificador);
+    public Optional<Skate> getSkateId(@PathVariable("id") Integer identificador) {
+        return skateService.getSkateId(identificador);
 
-}
+    }
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Skate save(@RequestBody Skate skate){
-    return skateService.save(skate);
-}
+    public Skate save(@RequestBody Skate skate) {
+        return skateService.save(skate);
+    }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
@@ -54,5 +56,4 @@ public class SkateController {
     public boolean delete(@PathVariable("id") Integer skateId) {
         return skateService.deleteSkate(skateId);
     }
-
 }

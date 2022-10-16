@@ -14,21 +14,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "message")
-public class Message implements Serializable{
- 
+public class Message implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name="skateId")
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JoinColumn(name = "skateId")
+    @JsonIgnoreProperties({"messages", "reservations"})
     private Skate skate;
 
     @ManyToOne
-    @JoinColumn(name="clientId")
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JoinColumn(name = "clientId")
+    @JsonIgnoreProperties({"messages", "reservations"})
     private Client client;
 
     public Integer getIdMessage() {

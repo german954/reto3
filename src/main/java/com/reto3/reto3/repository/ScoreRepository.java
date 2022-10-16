@@ -11,20 +11,23 @@ import com.reto3.reto3.repository.crud.ScoreCrudRepository;
 
 @Repository
 public class ScoreRepository {
-    
+
     @Autowired
     private ScoreCrudRepository scoreCrudRepository;
-    public List<Score> getScoreAll(){
+
+    /*public List<Score> getScoreAll() {
         return (List<Score>) scoreCrudRepository.findAll();
     }
-    public Optional<Score> getScoreId(int id){
+
+    public Optional<Score> getScoreId(int id) {
         return scoreCrudRepository.findById(id);
     }
 
-    public Score save(Score score){
+    public Score save(Score score) {
         return scoreCrudRepository.save(score);
     }
-    public void delete(Score score){
+
+    public void delete(Score score) {
         scoreCrudRepository.delete(score);
-    }
+    }*/
 }
