@@ -29,8 +29,8 @@ public class ClientRepository {
 
     /*public void update(Client client){
         clientCrudRepository.update(client);
-    }
-*/
+    }*/
+
     public void delete(Client client) {
         clientCrudRepository.delete(client);
     }

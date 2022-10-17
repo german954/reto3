@@ -15,7 +15,7 @@ public class AdminRepository {
     @Autowired
     private AdminCrudRepository adminCrudRepository;
 
-    /*public List<Admin> getAdminAll() {
+    public List<Admin> getAdminAll() {
         return (List<Admin>) adminCrudRepository.findAll();
     }
 
@@ -27,10 +27,11 @@ public class AdminRepository {
         return adminCrudRepository.save(admin);
     }
 
-    public void update(Admin admin){
+    /*public void update(Admin admin){
         adminCrudRepository.update(admin);
-    }
+    }*/
+
     public void delete(Admin admin) {
         adminCrudRepository.delete(admin);
-    }*/
+    }
 }

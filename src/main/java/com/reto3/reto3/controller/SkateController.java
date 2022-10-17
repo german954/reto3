@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.reto3.reto3.model.Skate;
 
 @RestController
@@ -36,7 +35,6 @@ public class SkateController {
     @GetMapping("/{id}")
     public Optional<Skate> getSkateId(@PathVariable("id") Integer identificador) {
         return skateService.getSkateId(identificador);
-
     }
 
     @PostMapping("/save")

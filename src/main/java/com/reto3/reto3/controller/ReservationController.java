@@ -6,20 +6,17 @@ import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.reto3.reto3.model.Reservation;
-//import com.reto3.reto3.reports.CounterClient;
-//import com.reto3.reto3.reports.StatusReservation;
+import com.reto3.reto3.reports.CounterClient;
+import com.reto3.reto3.reports.StatusReservation;
 import com.reto3.reto3.service.ReservationService;
 
 @RestController
@@ -46,7 +43,7 @@ public class ReservationController {
         return reservationService.save(reservation);
     }
 
-    /*@GetMapping("/report-status")
+    @GetMapping("/report-status")
     public StatusReservation getStatus() {
         return reservationService.ReservationStatus();
     }
@@ -59,5 +56,5 @@ public class ReservationController {
     @GetMapping("/report-clients")
     public List<CounterClient> getClient() {
         return reservationService.reportClient();
-    }*/
+    }
 }

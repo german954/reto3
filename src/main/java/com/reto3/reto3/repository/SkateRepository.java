@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.reto3.reto3.model.Skate;
 import com.reto3.reto3.repository.crud.SkateCrudRepository;
 

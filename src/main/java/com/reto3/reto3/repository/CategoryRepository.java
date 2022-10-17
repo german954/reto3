@@ -32,9 +32,9 @@ public class CategoryRepository {
         return categoryCrudRepository.save(category);
     }
 
-    /*public Optional<Category> update(Integer id) {
+    public Optional<Category> update(Integer id) {
         return categoryCrudRepository.findById(id);
-    }*/
+    }
 
     public void delete(Category category) {
         categoryCrudRepository.delete(category);

@@ -35,7 +35,7 @@ public class MessageService {
         }
     }
 
-    /*public Message update(Message message) {
+    public Message update(Message message) {
         if (message.getIdMessage() != null) {
             Optional<Message> messageAuxiliar = messageRepository.getMessageId(message.getIdMessage());
             if (!messageAuxiliar.isEmpty()) {
@@ -60,6 +60,6 @@ public class MessageService {
             flag = true;
         }
         return flag;
-    }*/
+    }
 }
 

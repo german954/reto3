@@ -1,9 +1,6 @@
 package com.reto3.reto3.repository;
 
-//import java.util.ArrayList;
-
 import java.util.Date;
-//import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +28,7 @@ public class ReservationRepository {
         return reservationCrudRepository.save(reservation);
     }
 
-    /*public void delete(Reservation reservation) {
+    public void delete(Reservation reservation) {
         reservationCrudRepository.delete(reservation);
     }
 
@@ -47,7 +44,7 @@ public class ReservationRepository {
         return reservationCrudRepository.reportClient();
     }
 
-// RETO 5
+/*// RETO 5
     public  List<CounterClient> getTopClient(){
         List<CounterClient>res=new ArrayList<>();
         List<Object[]>report=reservationCrudRepository.countTotalReservationsBySkate();
@@ -72,6 +69,5 @@ public class ReservationRepository {
 
     public List<Reservation> getReservationsByStatus(String status){
         return reservationCrudRepository.findAllByStatus(status);
-    }
-    */
+    }*/
 }

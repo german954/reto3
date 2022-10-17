@@ -15,7 +15,7 @@ public class ScoreRepository {
     @Autowired
     private ScoreCrudRepository scoreCrudRepository;
 
-    /*public List<Score> getScoreAll() {
+    public List<Score> getScoreAll() {
         return (List<Score>) scoreCrudRepository.findAll();
     }
 
@@ -29,5 +29,5 @@ public class ScoreRepository {
 
     public void delete(Score score) {
         scoreCrudRepository.delete(score);
-    }*/
+    }
 }

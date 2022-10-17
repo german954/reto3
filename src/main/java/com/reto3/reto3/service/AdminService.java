@@ -14,7 +14,7 @@ public class AdminService {
     @Autowired
     private AdminRepository adminRepository;
 
-    /*public List<Admin> getAdminAll() {
+    public List<Admin> getAdminAll() {
         return adminRepository.getAdminAll();
     }
 
@@ -35,7 +35,7 @@ public class AdminService {
         }
     }
 
-    public Admin update(Admin admin){
+    /*public Admin update(Admin admin){
         if(admin.getIdAdmin()!=null){
             Optional<Admin>adminAuxiliar = adminRepository.getAdminId(admin.getIdAdmin());
             if(!adminAuxiliar.isEmpty()){
@@ -49,7 +49,7 @@ public class AdminService {
                 }
             }
             return admin;
-        }
+        }*/
     
     public boolean deleteCategory (Integer Id){
         boolean flag=false;
@@ -58,6 +58,5 @@ public class AdminService {
             adminRepository.delete(adminAuxiliar.get());
         }
         return flag;
-    } 
-    */
+    }
 }
